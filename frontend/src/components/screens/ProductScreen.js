@@ -1,11 +1,25 @@
-import React from "react";
-import data from "../data";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { detailsProduct } from "../../actions/ProductActions";
+
 const ProductScreen = (props) => {
-  console.log(props.match.params.id);
-  const productId = props.match.params.id;
-  const product = data.products.find((x) => x._id === productId);
-  console.log(product);
+  const productDetails = useSelector((state) => state.productDetails);
+  const { product, loading, error } = productDetails;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(detailsProduct(props.match.params.id));
+  }, []);
+
+  console.log(productDetails);
+
+  if (!product) {
+    if (loading) {
+      return <div>Loading...</div>;
+    }
+    return <div>{error}</div>;
+  }
 
   return (
     <div>

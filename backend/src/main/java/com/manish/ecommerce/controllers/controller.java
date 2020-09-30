@@ -3,6 +3,7 @@ package com.manish.ecommerce.controllers;
 import com.manish.ecommerce.ProductRepository;
 import com.manish.ecommerce.domain.Product;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -32,6 +33,14 @@ public class controller {
 
         repo.save(product);
         return "Saved Successfully";
+    }
+
+    @GetMapping(value = "/product/{id}")
+    public Product getProduct(@PathVariable("id") Integer id) {
+        Optional<Product> product = repo.findById(id);
+        if(product.isEmpty())
+            return null;
+        return product.get();
     }
 
 

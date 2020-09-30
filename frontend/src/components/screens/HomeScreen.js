@@ -1,18 +1,35 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import { useSelector, useDispatch } from "react-redux";
+import { listProducts } from "../../actions/ProductActions";
 
 const HomeScreen = (props) => {
-  const [products, setProducts] = useState([]);
+  // const [products, setProducts] = useState([]);
+
+  /*
+  A hook to access the redux store's state. (redux new feature over connect() function )
+  This hook takes a selector function as an argument. The selector is called with the store state.
+  this like mapStateToProps fn which let you extact a state from store.
+  */
+  const productList = useSelector((state) => state.productList);
+
+  // destructing the porductList object.
+  const { products, loading, error } = productList;
+
+  // A hook to access the redux dispatch function.
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    const fetchData = async () => {
-      const { data } = await axios.get("/api/products");
-      console.log(data);
-      setProducts(data);
-    };
-    fetchData();
+    //dispatching action creator (listProducts) to get list of products.
+    dispatch(listProducts());
   }, []);
+
+  if (!products) {
+    if (loading) {
+      return <div>Loading...</div>;
+    }
+    return <div>{error}</div>;
+  }
 
   const renderProducts = products.map((product) => {
     return (
