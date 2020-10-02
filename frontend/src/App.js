@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Link } from "react-router-dom";
 import "./App.css";
 import HomeScreen from "./components/screens/HomeScreen";
 import ProductScreen from "./components/screens/ProductScreen";
+import CartScreen from "./components/screens/CartScreen";
 
 function App() {
   const openMenu = () => {
@@ -42,8 +43,10 @@ function App() {
         </aside>
         <main className="main">
           <div className="content">
-            <Route path="/" exact component={HomeScreen} />
             <Route path="/product/:id" exact component={ProductScreen} />
+            {/* "?" means "id" is optional, /cart will work even without id PathVariable. */}
+            <Route path="/cart/:id?" component={CartScreen} />
+            <Route path="/" exact component={HomeScreen} />
           </div>
         </main>
         <footer className="footer">All right is reserved</footer>

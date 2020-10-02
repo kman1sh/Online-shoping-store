@@ -6,8 +6,12 @@ import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import reducers from "./reducers";
+import Cookie from "js-cookie";
 
-const initialState = {};
+const cartItems = Cookie.getJSON("cartItems") || [];
+
+// cart is reducer key for cartReduce and its initial value is set from cookie, if there is any product in the cart.
+const initialState = { cart: { cartItems } };
 const store = createStore(reducers, initialState, applyMiddleware(thunk));
 
 ReactDOM.render(

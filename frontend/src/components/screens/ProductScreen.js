@@ -1,9 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { detailsProduct } from "../../actions/ProductActions";
 
 const ProductScreen = (props) => {
+  const [qty, setQty] = useState(1); // to allow max. qty to show in "add to cart section" based on product qty in stock.
+
   const productDetails = useSelector((state) => state.productDetails);
   const { product, loading, error } = productDetails;
   const dispatch = useDispatch();
@@ -12,7 +14,12 @@ const ProductScreen = (props) => {
     dispatch(detailsProduct(props.match.params.id));
   }, []);
 
-  console.log(productDetails);
+  // console.log(productDetails);
+
+  const handleAddToCartButtonClick = () => {
+    //history.push() is method redirect to another url
+    props.history.push(`/cart/${props.match.params.id}?qty=${qty}`);
+  };
 
   if (!product) {
     if (loading) {
@@ -20,6 +27,14 @@ const ProductScreen = (props) => {
     }
     return <div>{error}</div>;
   }
+
+  //Array(N)==> give empty array of length N.
+  // Array(N).keys() returns an "Array Iterator" object with the keys of an array.
+  // Array.from(Array(10).keys()) gives array from [0...N-1]
+  // short hand: [...Array(10).keys()]
+  const renderQtyList = [...Array(product.countInStock).keys()].map((x) => (
+    <option key={x + 1}>{x + 1}</option>
+  ));
 
   return (
     <div>
@@ -47,18 +62,26 @@ const ProductScreen = (props) => {
         <div className="details-action">
           <ul>
             <li>Price:Rs. {product.price}</li>
-            <li>Status: {product.status}</li>
+            <li>
+              Status: {product.countInStock > 0 ? "In Stock" : "Unavailable"}
+            </li>
             <li>
               Qty:{" "}
-              <select>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
+              <select value={qty} onChange={(e) => setQty(e.target.value)}>
+                {renderQtyList}
               </select>
             </li>
             <li>
-              <button className="add-to-cart-btn">Add to Cart</button>
+              {product.countInStock > 0 ? (
+                <button
+                  className="button primary"
+                  onClick={handleAddToCartButtonClick}
+                >
+                  Add to Cart
+                </button>
+              ) : (
+                <div>Out of Stock</div>
+              )}
             </li>
           </ul>
         </div>
