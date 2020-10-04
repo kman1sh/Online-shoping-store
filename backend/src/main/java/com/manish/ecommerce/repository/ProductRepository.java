@@ -1,4 +1,4 @@
-package com.manish.ecommerce;
+package com.manish.ecommerce.repository;
 
 import com.manish.ecommerce.domain.Product;
 import org.springframework.data.mongodb.repository.MongoRepository;

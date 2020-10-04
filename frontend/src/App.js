@@ -5,8 +5,15 @@ import "./App.css";
 import HomeScreen from "./components/screens/HomeScreen";
 import ProductScreen from "./components/screens/ProductScreen";
 import CartScreen from "./components/screens/CartScreen";
+import SigninScreen from "./components/screens/SigninScreen";
+import { useSelector } from "react-redux";
+import RegisterScreen from "./components/screens/RegisterScreen";
 
 function App() {
+  // conditionally changing header button: "Sign In" based on currently logged userInfo.
+  const userSignin = useSelector((state) => state.userSignin);
+  const { userInfo } = userSignin;
+
   const openMenu = () => {
     document.querySelector(".sidebar").classList.add("open");
   };
@@ -23,8 +30,12 @@ function App() {
             <Link to="/">amazona</Link>
           </div>
           <div className="header-links">
-            <a href="cart.html">Cart</a>
-            <a href="signin.html">Sign In</a>
+            <a href="cart.html">Cart </a>
+            {userInfo ? (
+              <Link to="/profile">Hi! {userInfo.name}</Link>
+            ) : (
+              <Link to="/signin">Sign In</Link>
+            )}
           </div>
         </header>
         <aside className="sidebar">
@@ -43,6 +54,8 @@ function App() {
         </aside>
         <main className="main">
           <div className="content">
+            <Route path="/register" exact component={RegisterScreen} />
+            <Route path="/signin" exact component={SigninScreen} />
             <Route path="/product/:id" exact component={ProductScreen} />
             {/* "?" means "id" is optional, /cart will work even without id PathVariable. */}
             <Route path="/cart/:id?" component={CartScreen} />

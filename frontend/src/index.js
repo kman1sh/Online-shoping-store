@@ -9,9 +9,9 @@ import reducers from "./reducers";
 import Cookie from "js-cookie";
 
 const cartItems = Cookie.getJSON("cartItems") || [];
-
+const userInfo = Cookie.getJSON("userInfo") || null;
 // cart is reducer key for cartReduce and its initial value is set from cookie, if there is any product in the cart.
-const initialState = { cart: { cartItems } };
+const initialState = { cart: { cartItems }, userSignin: { userInfo } };
 const store = createStore(reducers, initialState, applyMiddleware(thunk));
 
 ReactDOM.render(
