@@ -8,7 +8,7 @@ public class Product {
 
     @Id
     private int id;
-    private String name;
+    private String name;    
     private String category;
     private String image;
     private String description;

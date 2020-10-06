@@ -8,6 +8,9 @@ import CartScreen from "./components/screens/CartScreen";
 import SigninScreen from "./components/screens/SigninScreen";
 import { useSelector } from "react-redux";
 import RegisterScreen from "./components/screens/RegisterScreen";
+import ShippingScreen from "./components/screens/ShippingScreen";
+import PaymentScreen from "./components/screens/PaymentScreen";
+import PlaceOrderScreen from "./components/screens/PlaceOrderScreen";
 
 function App() {
   // conditionally changing header button: "Sign In" based on currently logged userInfo.
@@ -30,7 +33,7 @@ function App() {
             <Link to="/">amazona</Link>
           </div>
           <div className="header-links">
-            <a href="cart.html">Cart </a>
+            <Link to="/cart">Cart</Link>
             {userInfo ? (
               <Link to="/profile">Hi! {userInfo.name}</Link>
             ) : (
@@ -56,6 +59,9 @@ function App() {
           <div className="content">
             <Route path="/register" exact component={RegisterScreen} />
             <Route path="/signin" exact component={SigninScreen} />
+            <Route path="/shipping" component={ShippingScreen} />
+            <Route path="/payment" component={PaymentScreen} />
+            <Route path="/placeorder" component={PlaceOrderScreen} />
             <Route path="/product/:id" exact component={ProductScreen} />
             {/* "?" means "id" is optional, /cart will work even without id PathVariable. */}
             <Route path="/cart/:id?" component={CartScreen} />

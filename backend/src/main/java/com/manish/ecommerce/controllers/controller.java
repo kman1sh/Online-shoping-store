@@ -1,10 +1,12 @@
 package com.manish.ecommerce.controllers;
 
 import com.manish.ecommerce.domain.CreateUserModel;
+import com.manish.ecommerce.domain.OrderModel;
 import com.manish.ecommerce.domain.UserResponseModel;
 import com.manish.ecommerce.repository.ProductRepository;
 import com.manish.ecommerce.domain.Product;
 import com.manish.ecommerce.repository.UserRepository;
+import com.manish.ecommerce.service.OrderService;
 import com.manish.ecommerce.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,10 +24,13 @@ public class controller {
 
     private final UserService userService;
 
+    private final OrderService orderService;
+
     @Autowired
-    public controller(ProductRepository repo, UserService userService) {
+    public controller(ProductRepository repo, UserService userService, OrderService orderService) {
         this.repo = repo;
         this.userService = userService;
+        this.orderService = orderService;
     }
 
     @GetMapping(value = "/products")
@@ -55,6 +60,11 @@ public class controller {
     public ResponseEntity<UserResponseModel> createUser(@RequestBody CreateUserModel userDetails) {
         UserResponseModel createdUser =  userService.createUser(userDetails);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdUser);
+    }
+
+    @PostMapping(value = "/order")
+    public OrderModel createOrder(@RequestBody OrderModel order) {
+        return orderService.save(order);
     }
 
 

@@ -11,10 +11,13 @@ const SigninScreen = (props) => {
   const { loading, userInfo, error } = userSignin;
   const dispatch = useDispatch();
 
+  const redirect = props.location.search
+    ? props.location.search.split("=")[1]
+    : "/";
   useEffect(() => {
     // if userInfo is present and user tries to visit sign-in page, redirect user to homeScreen
     if (userInfo) {
-      props.history.push("/");
+      props.history.push(redirect);
     }
   }, [userInfo]); // also run useEffect, when userInfo is changed.
 
@@ -61,7 +64,13 @@ const SigninScreen = (props) => {
           </li>
           <li>
             <label htmlFor="button">New to amazon?</label>
-            <Link to="/register" className="button">
+
+            <Link
+              to={
+                redirect === "/" ? "register" : "register?redirect=" + redirect
+              }
+              className="button"
+            >
               Create New Account
             </Link>
           </li>

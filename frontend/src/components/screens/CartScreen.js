@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removeFromCart } from "../../actions/cartAction";
 import { Link } from "react-router-dom";
+import OrderSuccessModal from "./OrderSuccessModal";
 
 const CartScreen = (props) => {
   //goal what product and in what quantity
@@ -79,7 +80,7 @@ const CartScreen = (props) => {
       <div className="cart-list">
         <ul className="cart-list-container">
           {/* list item: 1st row: Shopping cart + price row. 
-          if no cart item then no more <li> tag. else new <li> for each list item. */}
+    if no cart item then no more <li> tag. else new <li> for each list item. */}
           <li>
             <h3>Shopping Cart</h3>
             <div>Price</div>
@@ -91,6 +92,7 @@ const CartScreen = (props) => {
           )}
         </ul>
       </div>
+
       <div className="cart-action">
         <h3>
           {/* Subtotal ( 5 items) : Rs. 3245. Note: c.qty multiply by 1 is litte hack to convert c.qty into from String to Number */}

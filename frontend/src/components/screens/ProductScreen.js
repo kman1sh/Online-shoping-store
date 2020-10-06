@@ -14,8 +14,6 @@ const ProductScreen = (props) => {
     dispatch(detailsProduct(props.match.params.id));
   }, []);
 
-  // console.log(productDetails);
-
   const handleAddToCartButtonClick = () => {
     //history.push() is method redirect to another url
     props.history.push(`/cart/${props.match.params.id}?qty=${qty}`);
