@@ -1,0 +1,225 @@
+[{
+  "_id": {
+    "$oid": "5f7d970181df7f505bede3ad"
+  },
+  "name": "Slim Fit Gray Printed Shirt",
+  "category": "Shirts",
+  "image": "/images/s1.webp",
+  "description": "very nice clothe",
+  "price": 1099,
+  "brand": "Nike",
+  "rating": "4.2",
+  "numReviews": 11,
+  "countInStock": 5,
+  "_class": "com.manish.ecommerce.domain.Product"
+},{
+  "_id": {
+    "$oid": "5f7d9a5281df7f505bede3ae"
+  },
+  "name": "Floral Print Straight Kurta Set",
+  "category": "women",
+  "image": "/images/461347450006.jpg",
+  "description": "100% Cotton Kurta, Bottomwear & Dupatta Dry clean. We assure the authenticity and quality of our products",
+  "price": 1150,
+  "brand": "INDO ERA",
+  "rating": "4.2",
+  "numReviews": 11,
+  "countInStock": 8,
+  "_class": "com.manish.ecommerce.domain.Product"
+},{
+  "_id": {
+    "$oid": "5f7d9c1281df7f505bede3af"
+  },
+  "name": "Lightly Washed Jacket with Patch Pocket",
+  "category": "women",
+  "image": "/images/461353076002.webp",
+  "description": "100% Cotton, Soft, Authentic, fashionable, best in class material, Machine wash. We assure the authenticity and quality of our products.",
+  "price": 495,
+  "brand": "BUYNEWTREND",
+  "rating": "4.2",
+  "numReviews": 11,
+  "countInStock": 8,
+  "_class": "com.manish.ecommerce.domain.Product"
+},{
+  "_id": {
+    "$oid": "5f7d9d1381df7f505bede3b0"
+  },
+  "name": "Cotton T-shirt with Branding",
+  "category": "tshirt",
+  "image": "/images/461353076004.webp",
+  "description": "100% Cotton, Soft, Authentic, fashionable, best in class material, Machine wash. We assure the authenticity and quality of our products.",
+  "price": 699,
+  "brand": "LEVIS",
+  "rating": "4.2",
+  "numReviews": 11,
+  "countInStock": 5,
+  "_class": "com.manish.ecommerce.domain.Product"
+},{
+  "_id": {
+    "$oid": "5f7d9d6b81df7f505bede3b1"
+  },
+  "name": "Mid-Rise Cotton Slim Fit Chinos",
+  "category": "pants",
+  "image": "/images/461353076005.webp",
+  "description": "100% Cotton, Soft, Authentic, fashionable, best in class material, Machine wash. We assure the authenticity and quality of our products.",
+  "price": 1299,
+  "brand": "FLYING MACHINE",
+  "rating": "4.2",
+  "numReviews": 13,
+  "countInStock": 10,
+  "_class": "com.manish.ecommerce.domain.Product"
+},{
+  "_id": {
+    "$oid": "5f7d9dae81df7f505bede3b2"
+  },
+  "name": "Washed Shirt with Flap Pockets",
+  "category": "pants",
+  "image": "/images/461353076006.jpg",
+  "description": "100% Cotton, Soft, Authentic, fashionable, best in class material, Machine wash. We assure the authenticity and quality of our products.",
+  "price": 1799,
+  "brand": "LEVIS",
+  "rating": "4.2",
+  "numReviews": 13,
+  "countInStock": 10,
+  "_class": "com.manish.ecommerce.domain.Product"
+},{
+  "_id": {
+    "$oid": "5f7d9dff81df7f505bede3b3"
+  },
+  "name": "Printed Slim Fit Shirt with Button-Down Collar",
+  "category": "pants",
+  "image": "/images/461353076007.webp",
+  "description": "100% Cotton, Soft, Authentic, fashionable, best in class material, Machine wash. We assure the authenticity and quality of our products.",
+  "price": 1079,
+  "brand": "Aeropostale",
+  "rating": "4.5",
+  "numReviews": 23,
+  "countInStock": 10,
+  "_class": "com.manish.ecommerce.domain.Product"
+},{
+  "_id": {
+    "$oid": "5f7d9e4d81df7f505bede3b4"
+  },
+  "name": "Slim Fit Flat-Front Formal Trousers",
+  "category": "pants",
+  "image": "/images/461353076008.webp",
+  "description": "100% Cotton, Soft, Authentic, fashionable, best in class material, Machine wash. We assure the authenticity and quality of our products.",
+  "price": 1374,
+  "brand": "U.S. Polo Assn.",
+  "rating": "4.5",
+  "numReviews": 23,
+  "countInStock": 10,
+  "_class": "com.manish.ecommerce.domain.Product"
+},{
+  "_id": {
+    "$oid": "5f7d9e9681df7f505bede3b5"
+  },
+  "name": "Checked Shirt with Patch Pocket",
+  "category": "shirt",
+  "image": "/images/461353076009.webp",
+  "description": "100% Cotton, Soft, Authentic, fashionable, best in class material, Machine wash. We assure the authenticity and quality of our products.",
+  "price": 1759,
+  "brand": "ALLEN SOLLY",
+  "rating": "4.5",
+  "numReviews": 23,
+  "countInStock": 10,
+  "_class": "com.manish.ecommerce.domain.Product"
+},{
+  "_id": {
+    "$oid": "5f7d9f1d81df7f505bede3b6"
+  },
+  "name": "Vintage Logo Metal Hoodie",
+  "category": "women",
+  "image": "/images/461353076011.webp",
+  "description": "100% Cotton, Soft, Authentic, fashionable, best in class material, Machine wash. We assure the authenticity and quality of our products.",
+  "price": 4599,
+  "brand": "SUPERDRY",
+  "rating": "4.5",
+  "numReviews": 23,
+  "countInStock": 10,
+  "_class": "com.manish.ecommerce.domain.Product"
+},{
+  "_id": {
+    "$oid": "5f7d9f5c81df7f505bede3b7"
+  },
+  "name": "Mid-Rise Ankle-Length Pleat-Front Pants",
+  "category": "women",
+  "image": "/images/461353076012.webp",
+  "description": "100% Cotton, Soft, Authentic, fashionable, best in class material, Machine wash. We assure the authenticity and quality of our products.",
+  "price": 1900,
+  "brand": "Koton",
+  "rating": "4.5",
+  "numReviews": 23,
+  "countInStock": 10,
+  "_class": "com.manish.ecommerce.domain.Product"
+},{
+  "_id": {
+    "$oid": "5f7d9fa681df7f505bede3b8"
+  },
+  "name": "Floral Print Round Neck Gown",
+  "category": "women",
+  "image": "/images/461353076013.webp",
+  "description": "100% Cotton, Soft, Authentic, fashionable, best in class material, Machine wash. We assure the authenticity and quality of our products.",
+  "price": 2799,
+  "brand": "ZARA",
+  "rating": "4.5",
+  "numReviews": 23,
+  "countInStock": 10,
+  "_class": "com.manish.ecommerce.domain.Product"
+},{
+  "_id": {
+    "$oid": "5f7da02981df7f505bede3b9"
+  },
+  "name": "Floral Print T-shirt",
+  "category": "women",
+  "image": "/images/461353076015.webp",
+  "description": "100% Cotton, Soft, Authentic, fashionable, best in class material, Machine wash. We assure the authenticity and quality of our products.",
+  "price": 490,
+  "brand": "Vero Moda",
+  "rating": "4.3",
+  "numReviews": 18,
+  "countInStock": 5,
+  "_class": "com.manish.ecommerce.domain.Product"
+},{
+  "_id": {
+    "$oid": "5f7da19a81df7f505bede3ba"
+  },
+  "name": "Floral Anarkali Kurta",
+  "category": "women",
+  "image": "/images/461353076003.webp",
+  "description": "100% Cotton, Soft, Authentic, fashionable, best in class material, Machine wash. We assure the authenticity and quality of our products.",
+  "price": 1178,
+  "brand": "FABRIC FITOOR",
+  "rating": "4.3",
+  "numReviews": 18,
+  "countInStock": 5,
+  "_class": "com.manish.ecommerce.domain.Product"
+},{
+  "_id": {
+    "$oid": "5f7da24281df7f505bede3bb"
+  },
+  "name": "Striped Slim Fit Shirt with Mandarin Collar",
+  "category": "shirt",
+  "image": "/images/461353076010.webp",
+  "description": "100% Cotton, Soft, Authentic, fashionable, best in class material, Machine wash. We assure the authenticity and quality of our products.",
+  "price": 1299,
+  "brand": "U.S. Polo Assn.",
+  "rating": "4.3",
+  "numReviews": 18,
+  "countInStock": 5,
+  "_class": "com.manish.ecommerce.domain.Product"
+},{
+  "_id": {
+    "$oid": "5f7da2f081df7f505bede3bc"
+  },
+  "name": "Mid-Rise Skinny Fit Chinos",
+  "category": "women",
+  "image": "/images/461353076014.webp",
+  "description": "100% Cotton, Soft, Authentic, fashionable, best in class material, Machine wash. We assure the authenticity and quality of our products.",
+  "price": 1250,
+  "brand": "LEVIS",
+  "rating": "4.7",
+  "numReviews": 15,
+  "countInStock": 8,
+  "_class": "com.manish.ecommerce.domain.Product"
+}]
