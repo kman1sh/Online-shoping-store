@@ -48,7 +48,7 @@ function App() {
           </div>
         </header>
         <aside className="sidebar">
-          <h1>Shopping Categories</h1>
+          <h4 className="remove-semantic-css">Shopping Categories</h4>
           <button onClick={closeMenu} className="sidebar-close-button">
             x
           </button>

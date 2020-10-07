@@ -35,7 +35,7 @@ const RegisterScreen = (props) => {
         {/* form elements as list */}
         <ul className="form-container">
           <li>
-            <h2>Create Account</h2>
+            <h2 className="remove-semantic-css">Create Account</h2>
           </li>
           <li>
             {loading && <div>Loading...</div>}

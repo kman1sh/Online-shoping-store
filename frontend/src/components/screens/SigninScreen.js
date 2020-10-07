@@ -33,7 +33,7 @@ const SigninScreen = (props) => {
         {/* form elements as list */}
         <ul className="form-container">
           <li>
-            <h2>Sign-In</h2>
+            <h2 className="remove-semantic-css">Sign-In</h2>
           </li>
           <li>
             {loading && <div>Loading...</div>}

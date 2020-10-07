@@ -22,7 +22,7 @@ function OrderScreen(props) {
       <div className="placeorder">
         <div className="placeorder-info">
           <div>
-            <h3>Shipping</h3>
+            <h3 className="remove-semantic-css">Shipping</h3>
             <div>
               {order.shipping.address}, {order.shipping.city},
               {order.shipping.postalCode}, {order.shipping.country},
@@ -34,14 +34,14 @@ function OrderScreen(props) {
             </div>
           </div>
           <div>
-            <h3>Payment</h3>
+            <h3 className="remove-semantic-css">Payment</h3>
             <div>Payment Method: {order.payment.paymentMethod}</div>
             <div>{order.isPaid ? "Paid at " + order.paidAt : "Not Paid."}</div>
           </div>
           <div>
             <ul className="cart-list-container">
               <li>
-                <h3>Shopping Cart</h3>
+                <h3 className="remove-semantic-css">Shopping Cart</h3>
                 <div>Price</div>
               </li>
               {order.orderItems.length === 0 ? (
@@ -79,7 +79,7 @@ function OrderScreen(props) {
               )}
             </li> */}
             <li>
-              <h3>Order Summary</h3>
+              <h3 className="remove-semantic-css">Order Summary</h3>
             </li>
             <li>
               <div>Items</div>

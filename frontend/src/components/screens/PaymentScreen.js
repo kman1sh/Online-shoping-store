@@ -21,7 +21,7 @@ function PaymentScreen(props) {
         <form onSubmit={submitHandler}>
           <ul className="form-container">
             <li>
-              <h2>Payment</h2>
+              <h2 className="remove-semantic-css">Payment</h2>
             </li>
 
             <li>

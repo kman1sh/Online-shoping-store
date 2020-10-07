@@ -46,13 +46,13 @@ const ProductScreen = (props) => {
         <div className="details-info">
           <ul>
             <li>
-              <h4>{product.name}</h4>
+              <h4 class="remove-semantic-css">{product.name}</h4>
             </li>
-            <li>
+            <li style={{ color: "#023e8a" }}>
               {product.rating} Stars ({product.numReviews} Reviews)
             </li>
             <li>
-              Description:
+              <strong>Description:</strong>
               <div>{product.description}</div>
             </li>
           </ul>

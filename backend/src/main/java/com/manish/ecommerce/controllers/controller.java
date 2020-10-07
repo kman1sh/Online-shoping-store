@@ -45,7 +45,7 @@ public class controller {
     }
 
     @GetMapping(value = "/product/{id}")
-    public Product getProduct(@PathVariable("id") Integer id) {
+    public Product getProduct(@PathVariable("id") String id) {
         Optional<Product> product = repo.findById(id);
         if(product.isEmpty())
             return null;

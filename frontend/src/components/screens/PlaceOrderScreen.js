@@ -15,7 +15,9 @@ function PlaceOrderScreen(props) {
   const { cartItems, shipping, payment } = cart;
 
   // if any of below data is not filled then redirecting  to that particular screen.
-  if (!shipping.address) {
+  if (!userInfo) {
+    props.history.push("/signin");
+  } else if (!shipping.address) {
     props.history.push("/shipping");
   } else if (!payment.paymentMethod) {
     props.history.push("/payment");
@@ -65,20 +67,20 @@ function PlaceOrderScreen(props) {
       <div className="placeorder">
         <div className="placeorder-info">
           <div>
-            <h3>Shipping</h3>
+            <h3 className="remove-semantic-css">Shipping</h3>
             <div>
               {cart.shipping.address}, {cart.shipping.city},
               {cart.shipping.postalCode}, {cart.shipping.country},
             </div>
           </div>
           <div>
-            <h3>Payment</h3>
+            <h3 className="remove-semantic-css">Payment</h3>
             <div>Payment Method: {cart.payment.paymentMethod}</div>
           </div>
           <div>
             <ul className="cart-list-container">
               <li>
-                <h3>Shopping Cart</h3>
+                <h3 className="remove-semantic-css">Shopping Cart</h3>
                 <div>Price</div>
               </li>
               {cartItems.length === 0 ? (
@@ -113,7 +115,7 @@ function PlaceOrderScreen(props) {
               </button>
             </li>
             <li>
-              <h3>Order Summary</h3>
+              <h3 className="remove-semantic-css">Order Summary</h3>
             </li>
             <li>
               <div>Items(Incl. Tax)</div>

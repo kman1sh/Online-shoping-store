@@ -9,8 +9,12 @@ function ShippingScreen(props) {
   const [city, setCity] = useState("");
   const [postalCode, setPostalCode] = useState("");
   const [country, setCountry] = useState("");
-
+  const { userInfo } = useSelector((state) => state.userSignin);
   const dispatch = useDispatch();
+
+  if (!userInfo) {
+    props.history.push("/signin");
+  }
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -24,7 +28,7 @@ function ShippingScreen(props) {
         <form onSubmit={submitHandler}>
           <ul className="form-container">
             <li>
-              <h2>Shipping</h2>
+              <h2 className="remove-semantic-css">Shipping</h2>
             </li>
 
             <li>
