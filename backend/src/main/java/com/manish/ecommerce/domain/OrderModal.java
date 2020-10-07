@@ -3,9 +3,10 @@ package com.manish.ecommerce.domain;
 import java.util.Date;
 import java.util.List;
 
-public class OrderModel {
+public class OrderModal {
 
     private String orderId;
+    private String username;
     private List<CartItem> orderItems;
     private double itemsPrice;
     private Payment payment;
@@ -14,6 +15,14 @@ public class OrderModel {
     private double taxPrice;
     private double totalPrice;
     private String date;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     public String getOrderId() {
         return orderId;

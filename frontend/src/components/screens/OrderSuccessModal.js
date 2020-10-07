@@ -4,7 +4,7 @@ import ReactDOM, { render } from "react-dom";
 const OrderSuccessModal = ({ order, onClose }) => {
   const renderItems = () => {
     return order.orderItems.map((item) => (
-      <p>
+      <p key={item.productId}>
         {item.qty} X {item.name}
       </p>
     ));

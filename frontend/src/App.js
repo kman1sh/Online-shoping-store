@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Link } from "react-router-dom";
 
 import "./App.css";
 import HomeScreen from "./components/screens/HomeScreen";
+
 import ProductScreen from "./components/screens/ProductScreen";
 import CartScreen from "./components/screens/CartScreen";
 import SigninScreen from "./components/screens/SigninScreen";
@@ -11,6 +12,8 @@ import RegisterScreen from "./components/screens/RegisterScreen";
 import ShippingScreen from "./components/screens/ShippingScreen";
 import PaymentScreen from "./components/screens/PaymentScreen";
 import PlaceOrderScreen from "./components/screens/PlaceOrderScreen";
+import ProfileScreen from "./components/screens/ProfileScreen";
+import OrderScreen from "./components/screens/OrderScreen";
 
 function App() {
   // conditionally changing header button: "Sign In" based on currently logged userInfo.
@@ -30,28 +33,31 @@ function App() {
         <header className="header">
           <div className="brand">
             <button onClick={openMenu}>&#9776;</button>
-            <Link to="/">amazona</Link>
+            <Link to="/">amazon</Link>
           </div>
           <div className="header-links">
             <Link to="/cart">Cart</Link>
             {userInfo ? (
-              <Link to="/profile">Hi! {userInfo.name}</Link>
+              <Link to="/profile">
+                Hi,{" "}
+                {userInfo.name.charAt(0).toUpperCase() + userInfo.name.slice(1)}
+              </Link>
             ) : (
               <Link to="/signin">Sign In</Link>
             )}
           </div>
         </header>
         <aside className="sidebar">
-          <h3>Shopping Categories</h3>
+          <h1>Shopping Categories</h1>
           <button onClick={closeMenu} className="sidebar-close-button">
             x
           </button>
           <ul>
             <li>
-              <a href="index.html">Pants</a>
+              <Link to="/">Pants</Link>
             </li>
             <li>
-              <a href="index.html">Shirts</a>
+              <Link to="/">Shirts</Link>
             </li>
           </ul>
         </aside>
@@ -62,6 +68,8 @@ function App() {
             <Route path="/shipping" component={ShippingScreen} />
             <Route path="/payment" component={PaymentScreen} />
             <Route path="/placeorder" component={PlaceOrderScreen} />
+            <Route path="/profile" component={ProfileScreen} />
+            <Route path="/order/:id" component={OrderScreen} />
             <Route path="/product/:id" exact component={ProductScreen} />
             {/* "?" means "id" is optional, /cart will work even without id PathVariable. */}
             <Route path="/cart/:id?" component={CartScreen} />

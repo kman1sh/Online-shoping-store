@@ -31,11 +31,13 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
 //        http.authorizeRequests().antMatchers("/**").hasIpAddress(env.getProperty("gateway.ip"));
-        http.authorizeRequests().antMatchers("/**").permitAll()
+        http.authorizeRequests()
+                .antMatchers("/api/orders/mine").authenticated()
+                .antMatchers("/**").permitAll()
                 .and()
                 .addFilter(getAuthenticationFilter());
 
-        http.headers().frameOptions().disable(); //to allow h2-console run as it uses frame to display dahsboard.
+        http.headers().frameOptions().disable(); //to allow h2-console run as it uses frame to display dashboard.
     }
 
     private AuthenticationFilter getAuthenticationFilter() throws Exception {

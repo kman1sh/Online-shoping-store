@@ -75,37 +75,42 @@ const CartScreen = (props) => {
   };
 
   return (
-    <div className="cart">
-      {/* cart-list, cart-action */}
-      <div className="cart-list">
-        <ul className="cart-list-container">
-          {/* list item: 1st row: Shopping cart + price row. 
-    if no cart item then no more <li> tag. else new <li> for each list item. */}
-          <li>
-            <h3>Shopping Cart</h3>
-            <div>Price</div>
-          </li>
-          {cartItems.length === 0 ? (
-            <div>Cart is empty</div>
-          ) : (
-            renderCartItems()
-          )}
-        </ul>
+    <div>
+      <div className="back-to-result">
+        <Link to="/">Back to result</Link>
       </div>
+      <div className="cart">
+        {/* cart-list, cart-action */}
+        <div className="cart-list">
+          <ul className="cart-list-container">
+            {/* list item: 1st row: Shopping cart + price row. 
+    if no cart item then no more <li> tag. else new <li> for each list item. */}
+            <li>
+              <h3>Shopping Cart</h3>
+              <div>Price</div>
+            </li>
+            {cartItems.length === 0 ? (
+              <div>Cart is empty</div>
+            ) : (
+              renderCartItems()
+            )}
+          </ul>
+        </div>
 
-      <div className="cart-action">
-        <h3>
-          {/* Subtotal ( 5 items) : Rs. 3245. Note: c.qty multiply by 1 is litte hack to convert c.qty into from String to Number */}
-          Subtotal ( {cartItems.reduce((a, c) => a + c.qty * 1, 0)} items) : Rs.{" "}
-          {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
-        </h3>
-        <button
-          onClick={checkoutHandler}
-          className="button primary full-width"
-          disabled={cartItems.length === 0}
-        >
-          Proceed to Checkout
-        </button>
+        <div className="cart-action">
+          <h3>
+            {/* Subtotal ( 5 items) : Rs. 3245. Note: c.qty multiply by 1 is litte hack to convert c.qty into from String to Number */}
+            Subtotal ( {cartItems.reduce((a, c) => a + c.qty * 1, 0)} items) :
+            Rs. {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
+          </h3>
+          <button
+            onClick={checkoutHandler}
+            className="button primary full-width"
+            disabled={cartItems.length === 0}
+          >
+            Proceed to Checkout
+          </button>
+        </div>
       </div>
     </div>
   );

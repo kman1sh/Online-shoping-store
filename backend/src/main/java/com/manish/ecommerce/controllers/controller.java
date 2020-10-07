@@ -1,11 +1,7 @@
 package com.manish.ecommerce.controllers;
 
-import com.manish.ecommerce.domain.CreateUserModel;
-import com.manish.ecommerce.domain.OrderModel;
-import com.manish.ecommerce.domain.UserResponseModel;
+import com.manish.ecommerce.domain.*;
 import com.manish.ecommerce.repository.ProductRepository;
-import com.manish.ecommerce.domain.Product;
-import com.manish.ecommerce.repository.UserRepository;
 import com.manish.ecommerce.service.OrderService;
 import com.manish.ecommerce.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,8 +59,18 @@ public class controller {
     }
 
     @PostMapping(value = "/order")
-    public OrderModel createOrder(@RequestBody OrderModel order) {
+    public OrderModal createOrder(@RequestBody OrderModal order) {
         return orderService.save(order);
+    }
+
+    @GetMapping(value = "/order/{orderId}")
+    public OrderModal getOrder(@PathVariable String orderId) {
+        return orderService.getOrder(orderId);
+    }
+
+    @GetMapping(value = "/orders/{username}")
+    public List<MyOrder> myOrders(@PathVariable String username) {
+        return orderService.ordersByUsername(username);
     }
 
 

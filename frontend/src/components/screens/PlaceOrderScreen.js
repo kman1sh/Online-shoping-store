@@ -10,7 +10,7 @@ import OrderSuccessModal from "./OrderSuccessModal";
 function PlaceOrderScreen(props) {
   const cart = useSelector((state) => state.cart); //reducer that stores address and paymentMethod for the order
   const orderCreate = useSelector((state) => state.orderCreate);
-
+  const { userInfo } = useSelector((state) => state.userSignin);
   const { loading, success, error, order } = orderCreate;
   const { cartItems, shipping, payment } = cart;
 
@@ -34,6 +34,7 @@ function PlaceOrderScreen(props) {
     dispatch(
       createOrder({
         orderItems: cartItems,
+        username: userInfo.username,
         shipping,
         payment,
         itemsPrice,
