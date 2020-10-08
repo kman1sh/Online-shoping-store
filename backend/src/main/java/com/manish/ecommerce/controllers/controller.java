@@ -47,9 +47,7 @@ public class controller {
     @GetMapping(value = "/product/{id}")
     public Product getProduct(@PathVariable("id") String id) {
         Optional<Product> product = repo.findById(id);
-        if(product.isEmpty())
-            return null;
-        return product.get();
+        return product.orElse(null);
     }
 
     @PostMapping(value = "/users/register")
